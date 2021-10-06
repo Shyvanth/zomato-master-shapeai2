@@ -15,6 +15,6 @@ zomato.use("/auth",Auth);
 
 zomato.get("/", (req,res) => res.json({message: "SetUp Success Yay!!"}));
 
-zomato.listen(420,()=>
+zomato.listen(4000,()=>
 ConnectDB().then(()=>console.log("modalpettandi"))
 .catch(()=>console.log("try again failed")));
