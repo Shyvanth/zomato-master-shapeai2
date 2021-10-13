@@ -5,9 +5,15 @@ import helmet from "helmet";
 import passport from "passport";
 
 import googleConfig from "./config/google.config";
+import routeConfig from "./config/route.config";
 
 import Auth from "./API/Auth";
 import Restaurant from "./API/Restaurant";
+import Food from "./API/Food";
+import Menu from "./API/Menu";
+import Image from "./API/Image";
+import Review from "./API/reviews";
+import Order from "./API/orders";
 
 import ConnectDB from "./database/connection";
 
@@ -21,8 +27,14 @@ zomato.use(passport.initialize());
 zomato.use(passport.session());
 
 googleAuthConfig(passport);
+routeConfig(passport);
 
 zomato.use("/restaurant",Restaurant);
+zomato.use("/food",Food);
+zomato.use("/menu",Menu);
+zomato.use("/image",Image);
+zomato.use("/reviews",Review);
+zomato.use("/order",Order);
 
 
 zomato.get("/", (req,res) => res.json({message: "SetUp Success Yay!!"}));
