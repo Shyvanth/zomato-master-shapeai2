@@ -4,14 +4,14 @@ import cors from "cors";
 import helmet from "helmet";
 import passport from "passport";
 
-import googleConfig from "./config/google.config";
+import googleAuthConfig from "./config/google.config";
 import routeConfig from "./config/route.config";
 
 import Auth from "./API/Auth";
 import Restaurant from "./API/Restaurant";
 import Food from "./API/Food";
 import Menu from "./API/Menu";
-import Image from "./API/Image";
+//import Image from "./API/Image";
 import Review from "./API/reviews";
 import Order from "./API/orders";
 
@@ -32,13 +32,13 @@ routeConfig(passport);
 zomato.use("/restaurant",Restaurant);
 zomato.use("/food",Food);
 zomato.use("/menu",Menu);
-zomato.use("/image",Image);
+//zomato.use("/image",Image);
 zomato.use("/reviews",Review);
 zomato.use("/order",Order);
 
 
-zomato.get("/", (req,res) => res.json({message: "SetUp Success Yay!!"}));
+zomato.get("/", (req,res) => res.json({message: "Let The fun Begin"}));
 
-zomato.listen(4000,()=>
+zomato.listen(420,()=>
 ConnectDB().then(()=>console.log("modalpettandi"))
 .catch(()=>console.log("try again failed")));
