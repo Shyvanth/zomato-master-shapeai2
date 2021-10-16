@@ -11,7 +11,7 @@ import Auth from "./API/Auth";
 import Restaurant from "./API/Restaurant";
 import Food from "./API/Food";
 import Menu from "./API/Menu";
-//import Image from "./API/Image";
+import Image from "./API/Image";
 import Review from "./API/reviews";
 import Order from "./API/orders";
 
@@ -32,7 +32,7 @@ routeConfig(passport);
 zomato.use("/restaurant",Restaurant);
 zomato.use("/food",Food);
 zomato.use("/menu",Menu);
-//zomato.use("/image",Image);
+zomato.use("/image",Image);
 zomato.use("/reviews",Review);
 zomato.use("/order",Order);
 
